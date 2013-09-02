@@ -393,12 +393,13 @@ var dropbox = {
 	   * req.setRequestHeader("Content-Length", (postRequest.requestBody.available()));
 	   * req.send(postRequest.requestBody);
 	   */
+            var {components} = require("chrome");
 
 	    function stringToStream(str) {
 	        function encodeToUtf8(oStr) {
 	            var utfStr = oStr;
-	            var uConv = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
-	            .createInstance(Components.interfaces.nsIScriptableUnicodeConverter);
+	            var uConv = components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
+	            .createInstance(components.interfaces.nsIScriptableUnicodeConverter);
 	            uConv.charset = "UTF-8";
 	            utfStr = uConv.ConvertFromUnicode(oStr);
 
@@ -407,31 +408,31 @@ var dropbox = {
 
 	        str = encodeToUtf8(str);
 
-	        var stream = Components.classes["@mozilla.org/io/string-input-stream;1"]
-	        .createInstance(Components.interfaces.nsIStringInputStream);
+	        var stream = components.classes["@mozilla.org/io/string-input-stream;1"]
+	        .createInstance(components.interfaces.nsIStringInputStream);
 	        stream.setData(str, str.length);
 
 	        return stream;
 	    }
 
 	    function fileToStream(file) {
-	        var fpLocal = Components.classes['@mozilla.org/file/local;1']
-	        .createInstance(Components.interfaces.nsILocalFile);
+	        var fpLocal = components.classes['@mozilla.org/file/local;1']
+	        .createInstance(components.interfaces.nsILocalFile);
 	        fpLocal.initWithFile(file);
 
-	        var finStream = Components.classes["@mozilla.org/network/file-input-stream;1"]
-	        .createInstance(Components.interfaces.nsIFileInputStream);
+	        var finStream = components.classes["@mozilla.org/network/file-input-stream;1"]
+	        .createInstance(components.interfaces.nsIFileInputStream);
 	        finStream.init(fpLocal, 1, 0, false);
 
-	        var bufStream = Components.classes["@mozilla.org/network/buffered-input-stream;1"]
-	        .createInstance(Components.interfaces.nsIBufferedInputStream);
+	        var bufStream = components.classes["@mozilla.org/network/buffered-input-stream;1"]
+	        .createInstance(components.interfaces.nsIBufferedInputStream);
 	        bufStream.init(finStream, 9000000);
 
 	        return bufStream;
 	    }
 
-	    var mimeSvc = Components.classes["@mozilla.org/mime;1"]
-	    .getService(Components.interfaces.nsIMIMEService);
+	    var mimeSvc = components.classes["@mozilla.org/mime;1"]
+	    .getService(components.interfaces.nsIMIMEService);
 	    const BOUNDARY = "---------------------------32191240128944";
 
 	    var streams = [];
@@ -472,8 +473,8 @@ var dropbox = {
 	        }
 	    }
 
-	    var uploadStream = Components.classes["@mozilla.org/io/multiplex-input-stream;1"]
-	    .createInstance(Components.interfaces.nsIMultiplexInputStream);
+	    var uploadStream = components.classes["@mozilla.org/io/multiplex-input-stream;1"]
+	    .createInstance(components.interfaces.nsIMultiplexInputStream);
 
 	    for (var i = 0; i < streams.length; i++) {
 	        uploadStream.appendStream(streams[i]);
