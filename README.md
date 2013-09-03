@@ -11,7 +11,7 @@ Chrome -- that sync your bookmarks between your browsers by writing to and
 reading from a file called bookmarks.json in your Dropbox account. For obvious
 reasons, we won't state what format the file is in.
 
-**_Warning:_** Please be careful when using kitchen_sink. Kitchen_sink is not
+**WARNING:_** Please be careful when using kitchen_sink. Kitchen_sink is not
 quite ready for production. Restoring bookmarks from Dropbox completely
 overwrites what you had in your browser with what's saved in Dropbox. As of
 now, kitchen_sink does not perform a merge. For example, you can sync from
