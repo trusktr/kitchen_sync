@@ -12,8 +12,8 @@ if(!simpleStorage.settings){
 }
 
 widgets.Widget({
-	id: "kitchen_skin_widget",
-	label: "kitchen_skin",
+	id: "kitchen_sink_widget",
+	label: "kitchen_sink",
 	contentURL: data.url('gui/img/icon.png'),
 	onClick: function() {
 		require("tabs").open(data.url("options.html"));
