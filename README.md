@@ -16,7 +16,7 @@ quite ready for production. Restoring bookmarks from Dropbox completely
 overwrites what you had in your browser with what's saved in Dropbox. As of
 now, kitchen_sink does not perform a merge. For example, you can sync from
 Chrome to Dropbox then overwrite your Firefox bookmarks, or the other way
-around. *You may want to _backup your browser's bookmarks_ before trying
+around. *You may want to __backup your browser's bookmarks__ before trying
 kitchen_sink.* Consider forking kitchen_sink and implementing merge
 functionality or fixing any other bugs. Thanks!
 
