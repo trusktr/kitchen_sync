@@ -16,6 +16,7 @@ widgets.Widget({
 	label: "kitchen_sink",
 	contentURL: data.url('gui/img/icon.png'),
 	onClick: function() {
+            console.log('Opening options page.');
 		require("tabs").open(data.url("options.html"));
 	}
 });
@@ -26,6 +27,7 @@ var pageMod = require("page-mod").PageMod({
 	contentScriptWhen: 'ready',
 	contentScriptFile: [data.url('js/jquery-1.8.3.min.js'), data.url('options.js')],
 	onAttach: function(worker) {
+            console.log("Content scripts attached.");
 		
 		//get value from extension storage
 		var app_key = simpleStorage.settings['app_key'];

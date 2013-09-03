@@ -1,6 +1,9 @@
+console.log('options.js executing...');
+
 $(document).ready(function(){
+    console.log("options.html is ready.");
 	$("#btn_get_token").click(function() {
-		if($("#app_key").val() != '' & $("#app_secret").val() != '') {
+		if($("#app_key").val() != '' && $("#app_secret").val() != '') {
 			self.port.emit('save_settings', {
 				'app_key' : $("#app_key").val(),
 				'app_secret' : $("#app_secret").val()
@@ -36,6 +39,7 @@ self.port.on('set_settings', function onMessage(settings) {
 });
 
 self.port.on('set_status', function onMessage(status) {
+    console.log('Status received: '+status);
 	switch(status) {
 		case "connected":
 			$("#connected_form").show();
@@ -48,3 +52,5 @@ self.port.on('set_status', function onMessage(status) {
 			break;
 	}
 });
+
+console.log('Done initializing options.js.');
