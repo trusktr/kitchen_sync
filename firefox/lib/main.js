@@ -24,7 +24,7 @@ widgets.Widget({
 var pageMod = require("page-mod").PageMod({
 	include: [data.url("options.html") + '*'],
 	contentScriptWhen: 'ready',
-	contentScriptFile: [data.url('js/jquery-1.6.4.min.js'), data.url('options.js')],
+	contentScriptFile: [data.url('js/jquery-1.8.3.min.js'), data.url('options.js')],
 	onAttach: function(worker) {
 		
 		//get value from extension storage
