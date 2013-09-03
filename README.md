@@ -46,13 +46,10 @@ account.
 
 - Bring up the extensions management page by clicking Chrome's menu button
   and choosing Tools > Extensions.
-
 - If Developer mode has a + by it, click the + to add developer
   information to the page. The + changes to a -, and more buttons and
   information appear.
-
 - Click the Load unpacked extension button. A file dialog appears.
-
 - In the file dialog, navigate to your extension's folder and click OK.
 
 More info at http://code.google.com/chrome/extensions/getstarted.html
@@ -61,9 +58,7 @@ More info at http://code.google.com/chrome/extensions/getstarted.html
 
 - Install the add-on SDK:
   https://addons.mozilla.org/en-US/developers/docs/sdk/1.1/dev-guide/addon-development/installation.html
-
 - Build the xpi by running `cfx xpi`.
-
 - Import the xpi to Firefox by pressing ctrl-o and selecting the file.
 
 ### Optionally, view the json data in your browser:
@@ -71,21 +66,20 @@ This section of the README is not done yet...
 
 - copy the browser.html file in your dropbox folder, you can rename it if
   you like.
-
 - search for <userid> and replace it with your dropbox id.
 
 ### Changelog:
 
-*v0.3.1*
+*v0.3.1 --*
 This is the final version, unless it becomes a planetary success I'm not going to add any new functionality.
 
-*v0.3*
+*v0.3 --*
 Added Firefox support.
 
-*v0.2*
+*v0.2 --*
 Changed auth methods to real oauth and changed dropbox api version from 0 to 1
 
-*v0.1*
+*v0.1 --*
 First basic version
 
 ### License:
@@ -95,16 +89,10 @@ First basic version
 ### Credits:
 
 - Bootstrap v1.3 (http://twitter.github.com/bootstrap).
-
 - gcons from greepit (http://www.greepit.com/open-source-icons-gcons/).
-
 - jQuery (http://jquery.com/).
-
 - JavaScript OAuth library by John Kristian (http://code.google.com/p/oauth/).
-
 - SHA1.js by Paul Johnston (http://pajhome.org.uk/crypt/md5/).
-
 - dropbox-js by Ben Cherry (https://github.com/bcherry/dropbox-js).
-
 - Adapt.js (http://adapt.960.gs/)
 
