@@ -9,7 +9,6 @@ $(document).ready(function(){
 				'app_secret' : $("#app_secret").val()
 			});
 			$("#btn_get_access").show();
-			self.port.emit('get_token');
 		}
 	});
 	
@@ -36,6 +35,10 @@ self.port.emit('get_settings');
 self.port.on('set_settings', function onMessage(settings) {
 	$("#app_key").val(settings.app_key);
 	$("#app_secret").val(settings.app_secret);
+});
+
+self.port.on('settings_saved', function() {
+    self.port.emit('get_token');
 });
 
 self.port.on('set_status', function onMessage(status) {

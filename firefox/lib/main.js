@@ -56,10 +56,12 @@ var pageMod = require("page-mod").PageMod({
 			simpleStorage.settings['app_key'] = settings.app_key;
 			simpleStorage.settings['app_secret'] = settings.app_secret;
 			console.log('settings saved');
+                        worker.port.emit('settings_saved');
 		});
 		
 		worker.port.on("get_token", function() {
 			console.log('dropbox set up');
+			dropbox.setup(simpleStorage.settings['app_key'], simpleStorage.settings['app_secret']);
 			dropbox.authenticate();
 		});
 		
