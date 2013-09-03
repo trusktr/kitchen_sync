@@ -1,4 +1,4 @@
-kitchen_sink
+kitchen_sync
 ============
 
 Sync bookmarks between Firefox and Chrome using Dropbox.
@@ -6,18 +6,18 @@ Sync bookmarks between Firefox and Chrome using Dropbox.
 Synopsis
 --------
 
-Kitchen_sink provides you with two extensions -- one for Firefox and one for
+Kitchen_sync provides you with two extensions -- one for Firefox and one for
 Chrome -- that sync your bookmarks between your browsers by writing to and
 reading from a file called bookmarks.json in your Dropbox account. For obvious
 reasons, we won't state what format the file is in.
 
-**_WARNING:_** Please be careful when using kitchen_sink. Kitchen_sink is not
+**_WARNING:_** Please be careful when using kitchen_sync. Kitchen_sync is not
 quite ready for production. Restoring bookmarks from Dropbox completely
 overwrites what you had in your browser with what's saved in Dropbox. As of
-now, kitchen_sink does not perform a merge. For example, you can sync from
+now, kitchen_sync does not perform a merge. For example, you can sync from
 Chrome to Dropbox then overwrite your Firefox bookmarks, or the other way
 around. *You may want to __backup your browser's bookmarks__ before trying
-kitchen_sink.* Consider forking kitchen_sink and implementing merge
+kitchen_sync.* Consider forking kitchen_sync and implementing merge
 functionality or fixing any other bugs. Thanks!
 
 Getting Started
@@ -34,12 +34,12 @@ to files already on Dropbox." Note that you can choose "Yes -- My app needs
 access to files it creates." but you'll have to modify a few small parts of the
 code for the extensions to work. Choose "Specific file types" then "Text files"
 (choosing just "All file types" will work too).  Now make a name for your app
-(yourusername_kitchen_sink for example) and finally create the app. You'll now
+(yourusername_kitchen_sync for example) and finally create the app. You'll now
 be taken to the management page for your app. Take note of the App key and App
 secret, which you'll need to provide the extensions later for them to
 authenticate with your Dropbox account. Also, there's no need to apply for
 production status for your Dropbox app as you'll be the only one using it.
-Lastly, create a folder called "kitchen_sink" in the root of your Dropbox
+Lastly, create a folder called "kitchen_sync" in the root of your Dropbox
 account.
 
 ### Install the Chrome extension:
